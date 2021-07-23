@@ -5,22 +5,20 @@ import React, {useState} from 'react';
 
 function App() {
 
-  const [state, setState] = useState({count: 55, theme: "dark"})
-  const count = state.count
-  const theme = state.theme
+  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState('dark')
+
+  //if you don't want your state "clashing" separate them
+
 
 
   function decrementCount(){
-    setState(prevState => {
-      return {...prevState, count: prevState.count - 1}
-    })
-    // setCount(prevCount => prevCount - 1)
+    setCount(prevCount => prevCount -1)
   }
 
   function incrementCount(){
-    setState(prevState => {
-      return {...prevState, count: prevState + 1}
-    })
+   setCount(prevCount => prevCount + 1)
+   setTheme('light')
   //  setCount(prevCount => prevCount + 1)
   }
   return(
