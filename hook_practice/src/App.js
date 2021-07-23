@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+
+
 
 function App() {
 
+  const [count, setCount] = useState(89)
+
+  function decrementCount(){
+    setCount(count-1)
+  }
 
   return(
 
     <div>
-      <button>-</button>
-      <span>0</span>
+      <button onClick={decrementCount}>-</button>
+      <span>{count}</span>
       <button>+</button>
 
     </div>
